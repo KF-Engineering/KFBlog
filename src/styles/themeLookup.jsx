@@ -1,4 +1,4 @@
-import { layouts, buttons, basic, icons, inputs, formfields } from "./themeHandler";
+import { layouts, inputs, icons, buttons} from "./themeHandler";
 import styled from "styled-components";
 import { GlobalSelector } from "./themeSelectors";
 

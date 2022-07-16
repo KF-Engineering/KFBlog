@@ -4,13 +4,12 @@ import styled from "styled-components";
 
 import axios from "axios";
 import { layouts, buttons, inputs, basicInputs, useInput} from "../styles/themeHandler";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 
 function StrippedNewArticle() {
     const navigate = useNavigate();
     const [rerender, setrerender]= useState(false);
     const params = useParams();
-    const id  = useState(params.id)
     const title = useInput("");
     const author= useInput("");
     const abstract= useInput("");
@@ -43,6 +42,7 @@ const getThis = () =>{
   useEffect(() => {
     getThis();
     setrerender(!rerender)
+    //eslint-disable-next-line
   }, [])
   
   useEffect(() => {

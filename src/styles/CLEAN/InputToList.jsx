@@ -1,8 +1,6 @@
-import { call } from "ramda";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { basicInputs, buttons, icons } from "../themeHandler";
-import SelectInput from "./SelectInput";
 export default function InputToList({
   rows = 4,
   cols = 3,
@@ -99,4 +97,3 @@ const Container = styled.div`
   }
 `;
 
-const InpBox = styled.div``;

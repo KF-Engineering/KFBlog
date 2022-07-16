@@ -48,6 +48,7 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
+    //eslint-disable-next-line
   }, []);
 
   const handleKeyUp = (event) => {
@@ -63,6 +64,7 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
     return () => {
       window.removeEventListener("keyup", handleKeyUp);
     };
+    //eslint-disable-next-line
   }, []);
 
   const drawTable = () => {
@@ -81,7 +83,6 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
         {Schedule[weekday].map((value, hour) => (
           <td
             weekday={"td-" + weekday + ":" + hour}
-            scope="row"
             id={"cellvalue" + value}
             className={"hour" + hour}
             onMouseEnter={(e) => OnCursorInCell(weekday, hour, e)}
@@ -115,11 +116,11 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
       }
     }
     console.log(on);
-    for (var i in toModify[weekday]) {
+    for (var it in toModify[weekday]) {
       if (on > 0) {
-        toModify[weekday][i] = 0;
+        toModify[weekday][it] = 0;
       } else {
-        toModify[weekday][i] = 1;
+        toModify[weekday][it] = 1;
       }
     }
 
@@ -134,7 +135,7 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
     var toModify = Schedule;
 
     var on = 0;
-    Object.keys(toModify).map((weekday, i) => {
+    Object.keys(toModify).forEach((weekday, i) => {
       if (toModify[weekday][hour] > 0) {
         on++;
       } else {
@@ -142,7 +143,7 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
       }
     });
 
-    Object.keys(toModify).map((weekday, i) => {
+    Object.keys(toModify).forEach((weekday, i) => {
       if (on >= 0) {
         toModify[weekday][hour] = 0;
       } else {
@@ -159,8 +160,8 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
 
   const setAll = (value) => {
     var toModify = Schedule;
-    Object.keys(toModify).map((weekday, i) => {
-      toModify[weekday].map((hour, index) => {
+    Object.keys(toModify).forEach((weekday, i) => {
+      toModify[weekday].forEach((hour, index) => {
         toModify[weekday][index] = value;
       });
     });
@@ -173,9 +174,9 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
 
   const OnCursorInCell = (weekday, hour, e) => {
     var toModify = Schedule;
-    if (brush == false) {
+    if (brush === false) {
       toModify[weekday][hour] = 0;
-    } else if (brush == true) {
+    } else if (brush === true) {
       toModify[weekday][hour] = 1;
     }
     setSchedule(toModify);
@@ -198,7 +199,8 @@ function NewDaypartEditor({callback, initialSchedule = xdays }) {
           <br />
           {Schedule["monday"].map((hour, index) => (
             <>
-              {index % 4 == 0 ? (
+              {index % 4 === 0 ? (
+                
                 <th className="labelColor" onClick={() => toggleHour(index)}>
                   {index}
                 </th>

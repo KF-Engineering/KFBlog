@@ -1,5 +1,4 @@
 import React from "react";
-import axios from 'axios'
 import styled from "styled-components";
 import { buttons, layouts } from "../styles/themeHandler";
 import { useNavigate } from "react-router-dom";

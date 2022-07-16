@@ -21,12 +21,13 @@ function InputSingleSelect({
   const [rerender, setRerender] = useState(false);
 
   useEffect(() => {
-    elementIds.map((el, index) => {
+    elementIds.forEach((el, index) => {
       if (el === initialValue) {
         update(index);
       }
     });
     CalcButtonWidth(ElementsperRow);
+    // eslint-disable-next-line
   }, []);
 
   const update = (index) => {
@@ -70,15 +71,11 @@ function InputSingleSelect({
  
       case 1:
         return "90%";
-        break;
     
       case 2:
         return "45%";
-        break;
       case 3:
         return "31%";
-        break;
-    
       default:
         return "50px";
       }

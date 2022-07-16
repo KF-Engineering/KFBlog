@@ -6,16 +6,10 @@ import ElasticSearch from "../components/SearchElement/SearchFrontend";
 import axios from "axios";
 import { buttons } from "../styles/themeHandler";
 import ArticleCard from "../components/ArticleCard";
-import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar/NavbarMain";
 
   
-function delay(milliseconds){
-    return new Promise(resolve => {
-        setTimeout(resolve, milliseconds);
-    });
-}
 
 function Home() {
   const [articleList, setarticleList] = useState([""]);
@@ -23,7 +17,6 @@ function Home() {
   const [tags, settags] = useState([]);
   const [availTags, setAvailTags] = useState([]);
   const [rerender , setRerender] = useState(false);
-  const navigate = useNavigate();
   const [isSideOpen, setIsSideOpen] = useState(false);
 
   const toggleSideOnScroll = () => {
@@ -71,7 +64,7 @@ function Home() {
     axios
       .get(window.apiUrl +"article/", articleList)
       .then((res) => {
-        if (res.data.length == 0) {
+        if (res.data.length === 0) {
           alert("No articles found");
         } else {
           setarticleList(res.data);
@@ -82,17 +75,19 @@ function Home() {
         console.log("Error in loading all articles!");
         return <h1>No Articles found</h1>;
       });
+    //eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     computeAvailableTags();
+    //eslint-disable-next-line
   }, [articleList]);
 
 
   const computeAvailableTags = () => {
     var tags = [];
-    articleList.map((article) => {
-      article.tags?.map((taggi) => {
+    articleList.forEach((article) => {
+      article.tags?.forEach((taggi) => {
         tags.push(taggi);
       });
     });
@@ -104,22 +99,22 @@ function Home() {
   };
   useEffect(() => {
     filterByTags()
+    //eslint-disable-next-line
   }, [tags])
 
   const filterByTags = () => {
     var newList = [];
-    if (tags?.length ==0) 
+    if (tags?.length ===0) 
     {
       setDisplayedArticles(articleList);
       return
     }
     
-    articleList.map((article)=>
+    articleList.forEach((article)=>
     {
-      article.tags?.map((taggi)=> {
-        tags?.map((taggorius) => {
-    
-          if (taggi == Object.keys(taggorius)[0]){
+      article.tags?.forEach((taggi)=> {
+        tags?.forEach((taggorius) => {   
+          if (taggi === Object.keys(taggorius)[0]){
             newList.push(article)
           }
         })

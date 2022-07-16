@@ -1,5 +1,5 @@
 import React , {useEffect}from 'react'
-import { layouts, basicInputs} from "../themeHandler"
+import {basicInputs} from "../themeHandler"
 import styled from 'styled-components';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ export function DeletePopup({id =0 , token=-1, string="", shortCircuit=false}) {
     const navigate = useNavigate();
     useEffect(() => {
       if (shortCircuit){deleteThis(id)}
+      //eslint-disable-next-line
     }, [])
     
 const deleteThis = (id , token=-1) => {
@@ -25,7 +26,7 @@ const deleteThis = (id , token=-1) => {
   };
 const checkDelete = (e) => {
 var str = e.target.value;
-if (str == "Delete " + string){
+if (str === "Delete " + string){
     alert("Deleting")
     deleteThis(id);
 }

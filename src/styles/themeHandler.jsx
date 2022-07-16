@@ -8,7 +8,6 @@ import { CLEANButtons } from "./CLEAN/CLEANButtons";
 import {CLEANLayouts} from "./CLEAN/CLEANLayouts"
 import {CLEANInputs} from "./CLEAN/CLEANInputs"
 import {useInput} from "./functions/useInput"
-import {CLEANForms} from "./CLEAN/CLEANForms"
 
 //====================================Functions
 //==============================================
@@ -20,7 +19,6 @@ const complex = CLEANComplex;
 const icons = CLEANIcon;
 const inputs = CLEANInputs;
 const basicInputs = CLEANBasicInputs;
-const forms = CLEANForms
 
 function Global() {
   console.log("Global");
@@ -30,4 +28,4 @@ function Global() {
   import("./CLEANGlobal.scss");
 }
 
-export { inputs, basic,forms, complex, buttons, layouts, Global, icons, basicInputs, useInput };
+export { inputs, basic, complex, buttons, layouts, Global, icons, basicInputs, useInput };

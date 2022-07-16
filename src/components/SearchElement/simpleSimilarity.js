@@ -5,8 +5,8 @@ export const simpleSimilarity = (word, otherWord) => {
 
   for (var indexfirst = 0; indexfirst < word.length; indexfirst++) {
     for (var indexsecond = 0; indexsecond < otherWord.length; indexsecond++) {
-      if (word.charAt(indexfirst).toLowerCase() == otherWord.charAt(indexsecond).toLowerCase()) {
-        if (indexfirst == indexsecond) {
+      if (word.charAt(indexfirst).toLowerCase() === otherWord.charAt(indexsecond).toLowerCase()) {
+        if (indexfirst === indexsecond) {
           score++;
           continue;
         }

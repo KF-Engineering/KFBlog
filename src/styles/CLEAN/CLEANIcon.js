@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { ReactComponent as ArrowA} from "./KFIcons/ArrowActive.svg";
 import { ReactComponent as DL} from "./KFIcons/DownloadIcon.svg";
 import { ReactComponent as AddIcn} from "./KFIcons/AddIcon.svg";
-import { ReactComponent as checker} from "./KFIcons/check.svg";
 import { ReactComponent as Expnd} from "./KFIcons/ExpandIcon.svg";
 import { ReactComponent as Lgt} from "./KFIcons/Logout.svg";
 import { ReactComponent as Pn} from "./KFIcons/Pen.svg";

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Global } from "./themeHandler";
 
 export const GlobalSelector = ({
   onSelect,
@@ -38,7 +37,7 @@ console.log("theme Changes: Hot Reload: " + window.$theme)
   return (
     <SelectionContainer className="SelectionContainer">
       <section
-        id={data == Placeholder ? "placeholder" : ""}
+        id={data === Placeholder ? "placeholder" : ""}
         onClick={() => setDropMenu(!isDropMenu)}
       >
         {data}

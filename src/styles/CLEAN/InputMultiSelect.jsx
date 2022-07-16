@@ -16,9 +16,9 @@ function InputMultiSelect({
   useEffect(() => {
     var els = [];
 
-    elementIds.map((el, index) => {
+    elementIds.forEach((el, index) => {
       els.push(false);
-      initialValue.map((element, i) => {
+      initialValue.forEach((element, i) => {
         if (el === element) {
           els[index] = true;
         }
@@ -84,61 +84,3 @@ const InputMultiSelectContainer = styled.div`
     justify-content: space-between;
   }
 `;
-
-const FormMultiSelect= ({
-  label,
-  field,
-  // { name, value, onChange, onBlur}
-  form, // { touched, errors}
-  ...props
-}) => {
-  const handleChange = (e) => {
-    if (typeof field.onChange == "function") {
-      console.log("SSPEXCHANGE fields.onchange");
-      console.log("field name: " + field.name);
-      console.log("current value: " + JSON.stringify(e));
-      form.setFieldValue(field.name, e);
-    } else {
-      console.log("fields.Onchange is not a function");
-    }
-    console.log("form.touched");
-    console.log(form.touched);
-    console.log("form.errors");
-    console.log(form.errors);
-  };
-  return (
-    <div className="SSPEXCHANGE">
-      <label htmlFor={field.name || props.nme}>{label}</label>
-      <InputMultiSelect
-        name={field.name}
-        id={field.name}
-        className="form-control"
-        textList={[
-          "Google",
-          "IQ Digital",
-          "Stroer",
-          "Yieldlab",
-          "IQ Digital ECO",
-          "Stroer ECO",
-        ]}
-        elementIds={[
-          "Google",
-          "IQDigital",
-          "Stroer",
-          "Yieldlab",
-          "IQDigitalECO",
-          "StroerECO",
-        ]}
-        initialValue={field.value}
-        ElementsperRow={3}
-        {...field}
-        {...props}
-        callback={handleChange}
-      />
-
-      {form.touched && form.errors ? (
-        <div className="error">{form.errors.sspexchange}</div>
-      ) : null}
-    </div>
-  );
-};

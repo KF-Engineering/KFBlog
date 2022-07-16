@@ -1,21 +1,19 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import Popup from "reactjs-popup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { buttons, layouts, forms, icons } from "../styles/themeHandler";
+import { buttons, layouts} from "../styles/themeHandler";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaRegThumbsUp } from "react-icons/fa";
 import { DeletePopup } from "../styles/CLEAN/DeletePopup";
 
-let IP = require("../UploadedImages/1656066888183_Screenshot_5.png");
 
 function Article() {
   const navigate = useNavigate();
   const params = useParams();
-  const [id, setid] = useState(params.params);
+  const [id] = useState(params.params);
   const [title, setTitle] = useState("NoLoad");
   const [author, setAuthor] = useState("NoLoad");
   const [date, setDate] = useState("NoLoad");
@@ -23,14 +21,12 @@ function Article() {
   const [tags, setTags] = useState([]);
   const [OBJS, setOBJS] = useState([]);
   const [likes, setLikes] = useState(0);
-  const [other, setOther] = useState([]);
+  const [setOther] = useState([]);
   const [deleting, setDeleting] = useState(false);
-  const [rerender, setRerender] = useState(true);
   const [processedOBJS, setProcessedOBJS] = useState([]);
   const [TitlePic, setTitlePic] = useState("");
 
   useEffect(() => {
-    var arr = [];
     var processed = [];
 
     OBJS.forEach((obj) => {
@@ -42,9 +38,9 @@ function Article() {
     });
     console.log(processed);
     setProcessedOBJS(processed);
+    //eslint-disable-next-line
   }, [OBJS]);
 
-  useEffect(() => {}, [rerender]);
 
   const getThis = () => {
     const callString = window.apiUrl +"article/" + id;
@@ -70,6 +66,7 @@ function Article() {
 
   useEffect(() => {
     getThis();
+    //eslint-disable-next-line
   }, []);
 
   const citeThisArticle = () => {
@@ -88,7 +85,7 @@ function Article() {
   return (
     <ArticleContainer>
       <ArticleHero>
-        <img src={TitlePic} />
+        <img src={TitlePic} alt="here should be the title pic" />
         <ArticleHeader className="ArticleHeader">
           <div className="topline"></div>
           <div className="headerSection">
@@ -109,6 +106,7 @@ function Article() {
             >
               <FaRegThumbsUp />
             </buttons.Highlight>
+            {likes}
             <buttons.Negative onClick={() => setDeleting(true)}>
               delete{" "}
             </buttons.Negative>

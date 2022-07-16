@@ -39,6 +39,7 @@ const SelectInput = ({
     if (typeof callback == "function") {
       callback(data);
     }
+    //eslint-disable-next-line
   }, [data]);
 
   const onmouseleave = () =>{
@@ -52,7 +53,7 @@ const SelectInput = ({
   return (
     <SelectionContainer className="SelectionContainer" expanded={isDropMenu} onMouseLeave = {() => onmouseleave()}>
       <section
-        id={data == Placeholder ? "placeholder" : ""}
+        id={data === Placeholder ? "placeholder" : ""}
         onClick={() => setDropMenu(!isDropMenu)}
       >
         {data}

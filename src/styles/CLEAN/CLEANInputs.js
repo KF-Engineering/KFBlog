@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import InputSingleSelect from './InputSingleSelect';
 import SelectInput from './SelectInput';
 import InputToggle from './InputToggle';
 import InputToList from './InputToList';

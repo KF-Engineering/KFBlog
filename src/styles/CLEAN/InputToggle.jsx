@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
-import {Field} from "formik";
 
 const InputToggle = ({onChange, name}) => {
     let [isinputToggle, setInputToggle] = useState(false);
@@ -12,7 +11,7 @@ const InputToggle = ({onChange, name}) => {
         } else {
             onChange(false)
         }
-
+//eslint-disable-next-line
     }, [isinputToggle])
 
 

@@ -12,9 +12,6 @@ const exampleArray ={
   "fourtyfive": {"fourtyfive": [45, 45.5, 45.2]},
 }
 ;
-const unique = (value, index, self) => {
-  return self.indexOf(value) === index
-}
 
 
 function ElasticSearch({AvailableOptionsMap=exampleArray, callback="None",initialValue=[], CloseOnSelect=true}  ) {
@@ -51,10 +48,10 @@ if (key.includes(searchterm)){
     console.log(currentExact)
 
 const elastics =[];
-for ( var key in AvailableOptionsMap){
-  var score = simpleSimilarity(searchterm, key);
-  elastics.push([key, score]);
-  scores.push(score);
+for ( var anotherkey in AvailableOptionsMap){
+  var Newscore = simpleSimilarity(searchterm, anotherkey);
+  elastics.push([key, Newscore]);
+  scores.push(Newscore);
 } 
 
 scores= [...new Set(scores)];
@@ -66,7 +63,7 @@ const softhits = [];
 setCurrentElastic([]);
 for (var score in scores){
   for ( var subArr in elastics){
-    if (scores[score] == elastics[subArr][1]){
+    if (scores[score] === elastics[subArr][1]){
       softhits.push(AvailableOptionsMap[elastics[subArr][0]])
     }
   }
@@ -103,6 +100,7 @@ console.log(currentElastic)
 if (typeof callback == "function") {
       callback(selected);
     }
+// eslint-disable-next-line
   }, [rerender])
 
   const removeItem = (el) => {

@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 import { Link as LinkRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
-import { buttons} from "../../styles/themeHandler";
 import { ReactComponent as KF } from "./KF_Logo.svg";
 
 function Navbar({ toggle, isNavOpen, navList }) {
