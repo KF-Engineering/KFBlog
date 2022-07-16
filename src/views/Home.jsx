@@ -44,7 +44,6 @@ function Home() {
   };
 
   toggleNav();
-  toggleNav();
   useEffect((toggleNav) => {
     window.addEventListener("scroll", toggleNav);
     return () => window.removeEventListener("scroll", toggleNav);
@@ -113,7 +112,7 @@ function Home() {
     articleList.forEach((article)=>
     {
       article.tags?.forEach((taggi)=> {
-        tags?.forEach((taggorius) => {   
+        tags?.forEach((taggorius) => {
           if (taggi === Object.keys(taggorius)[0]){
             newList.push(article)
           }
