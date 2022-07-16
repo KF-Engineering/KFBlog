@@ -1,0 +1,6 @@
+<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="11.2844" y="1.41421" width="14" height="14" rx="7" transform="rotate(44.8308 11.2844 1.41421)" fill="var(--iconBackgroundColor)" stroke="var(--iconBackgroundColor)" stroke-width="2"/>
+<rect x="11.2844" y="1.41421" width="14" height="14" rx="7" transform="rotate(44.8308 11.2844 1.41421)" fill="var(--iconBackgroundColor)" stroke="var(--iconBackgroundColor)" stroke-width="2"/>
+<path d="M9.02171 10.3523L13.9806 10.3377L13.9806 6.64874L13.9589 2.99998L9.00005 3.01463L9.02171 10.3523Z" fill="var(--iconBackgroundColor)"/>
+<rect x="12.5008" y="1.99854" width="10" height="2.07392" rx="1" transform="rotate(89.8308 12.5008 1.99854)" fill="var(--iconTextColor)"/>
+</svg>

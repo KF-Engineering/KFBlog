@@ -1,0 +1,126 @@
+///getting data from settings
+@import "./functions/settings";
+  
+  
+:root{
+  overflow: scroll;
+  --highlightHoverColor: unset;
+--highlightHoverColor: unset;
+--highlightHoverColor: initial;
+}
+  
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: $minWidth + px;
+}
+
+body {
+
+  background-color: var(--backgroundColor);
+  color: var(--backgroundTextColor);
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: scroll;
+  font-size: 1.3em;
+}
+
+input,
+button,
+textarea {
+  margin: 5px 5px 5px 5px;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+label{
+  margin: 5px 5px 5px 5px ;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+
+#App{
+  background-color: var(--backgroundColor);
+  width: calc(100vw-10px);
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.seperator{
+  background-color: var(--seperatorColor);
+  height: calc( var(--buttonBorderRadius) / 2);
+  width: 100%;
+  margin: 5px 0px 5px 0px;
+  border-radius: var(--buttonBorderRadius);
+}
+
+.LikeButton{
+  height: 40px;
+  width: 40px ;
+  border-radius: 20px;
+}

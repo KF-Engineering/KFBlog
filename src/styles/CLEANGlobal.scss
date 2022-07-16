@@ -1,0 +1,60 @@
+.CLEAN {
+  
+  //DEV modify global font
+  font-family: "Roboto", sans-serif;
+
+  //DEV modify theme border radious for buttons and containers here
+  --buttonBorderRadius: 10px;
+  --buttonBorderThickness: 6px;
+  
+
+  --containerBorderRadius:15px;
+  --containerBorderThickness:3px;
+
+  --inputBorderRadius:10px;
+  --inputBorderThickness: 3px;
+
+  /*Basics: Themecolor is usually background color*/
+
+
+  --backgroundColor: rgb(255, 255, 255);
+  --backgroundTextColor: rgb(70, 70, 70);
+
+  --contrastColor: black;
+  --contrastTextColor: white;
+
+  --modestColor: rgba(44, 44, 44, 0.5);
+  --modestTextColor: rgb(0, 0, 0);
+
+  --normalColor: rgb(255, 255, 255);
+  --normalTextColor: rgb(0, 0, 0);
+
+  --highlightColor: rgb(50, 100, 176);
+  --highlightTextColor: black;
+
+  --alertColor: rgb(141, 48, 48);
+  --alertTextColor: black;
+
+  --NegativeColor: rgb(200,10,40);
+  --NegativeTextColor: black;
+
+
+  --containerInvisibleColor: rgba(0, 0, 0, 0.001);
+  --containerLightColor: rgba(68, 68, 68, 0.2);
+  --containerSolidColor: rgb(30, 30, 30);
+  --containerBorderColor: rgb(90,90,90);
+  --containerTextColor: white;
+
+  --inputBorderColor: var(--seperatorColor);
+  --inputBackgroundColor: var(--containerLightColor);
+  --seperatorColor: rgba(20, 20, 20, 0.7);
+
+  /*others*/
+  --accentColor: rgb(50, 100, 176);
+  --shadowColor: black;
+  --transparent: rgba(1,1,1,0.01);
+  --disableColoror: rgb(41, 41, 41);
+  --iconTextColor: var(--highlightColor);
+  --iconBackgroundColor: var(--transparent);
+
+}

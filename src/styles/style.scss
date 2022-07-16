@@ -1,0 +1,79 @@
+//**************************************************************************************************************************************************
+// import settings =========================================================================================================================
+@import "./functions/settings";
+// adding mixins ===========================================================================================================================================================================================================================================================================
+@import "./functions/mixins";
+// adding null ============================================================================================================================
+@import "null";
+//*********************************************************************************************************************************************
+
+
+//breakpoints
+$pc: em($containerWidth); // for PC,laptop
+$tablet: em(991.98); // for tablet
+$mobile: em(767.98); // for phones size L
+$mobileSmall: em(479.98); // for phones size S
+
+
+// wrapper ============================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+.wrapper {
+  overflow-x: hidden;
+  min-height: 100vh;
+  //width: 100vw;
+  display: flex;
+  flex-direction: column;
+  // pressing footer to bottom
+  > main {
+    flex: 1 1 auto;
+  }
+}
+
+//bounding container ======================================================================================================================================================================================================================
+
+/*
+(i) Styles will be applied to
+all classes containing *__container
+For example header__container, main__container, etc.
+Snippet (HTML): cnt
+*/
+@if ($responsiveType==1) {
+  //responsive
+  [class*="__container"] {
+
+    @if ($maxWidthContainer > 0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+    }
+    @if ($containerPadding  > 0) {
+      padding: 0 rem($containerPadding/ 2);
+    }
+  }
+} @else {
+  //by breakpoints
+  [class*="__container"] {
+    margin: 0 auto;
+    @if ($maxWidthContainer > 0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem($containerPadding/ 2);
+      }
+    }
+    @media (max-width: $pc) {
+      max-width: rem(950);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(730);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem($containerPadding/ 2);
+      }
+    }
+  }
+}
+

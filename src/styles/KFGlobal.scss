@@ -1,0 +1,57 @@
+
+.KF{
+  /*Basics: Themecolor is usually background color*/
+  //DEV modify global font
+  font-family: "Roboto", sans-serif;
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  //DEV modify theme border radious for buttons and containers here
+  --buttonBorderRadius: 0px;
+  --buttonBorderThickness: 0px;
+  
+
+  --containerBorderRadius: 0px;
+  --containerBorderThickness:0px;
+
+  --inputBorderRadius:0px;
+  --inputBorderThickness: 0px;
+
+  --backgroundColor: rgb(255, 255, 255);
+  --backgroundTextColor: rgb(59, 59, 59);
+  --contrastColor:rgb(45, 45, 45);
+  --contrastTextColor: rgb(255, 255, 255);
+
+  --modestColor: rgb(200, 200, 200);
+  --modestTextColor: rgb(50, 50, 50);
+
+  --normalColor: rgb(180, 180, 180);
+  --normalTextColor: rgb(50, 50, 50);
+
+  --highlightColor: rgb(233, 210, 0);
+  --highlightTextColor: black;
+
+  --alertColor: rgb(141, 48, 48);
+  --alertTextColor: white;
+
+  --NegativeColor: rgb(200,10,40);
+  --NegativeTextColor: black;
+
+  --containerInvisibleColor: rgba(0, 0, 0, 0.001);
+  --containerLightColor: rgba(0, 0, 0, 0.7);
+  --containerSolidColor: rgb(66, 66, 66);
+  --containerBorderColor: rgb(90,90,90);
+  --containerTextColor: rgb(255, 255, 255);
+
+  --inputBorderColor: var(--seperatorColor);
+  --inputBackgroundColor: var(--containerLightColor);
+  --seperatorColor: rgba(20, 20, 20, 0.7);
+
+  /*others*/
+  --accentColor: rgb(50, 100, 176);
+  --shadowColor: black;
+  --transparent: rgba(1,1,1,0.01);
+  --disableColor: rgb(194, 187, 187);
+  --iconTextColor: var(--highlightColor);
+  --iconBackgroundColor: var(--transparent);
+
+}
